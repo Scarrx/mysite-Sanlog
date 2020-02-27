@@ -1,0 +1,5 @@
+{% block script %} {% if theme.js %}
+<script src="{{ url_for('static',filename=theme.js)}}"></script>
+{% endif %}
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+{% endblock script %}

@@ -1,0 +1,20 @@
+{% block donate %}
+<div class="donate-button">
+    <i class="iconfont icon-donate"></i>
+</div>
+
+<div class="donate-box" class="none">
+    <span class="donate-cancel iconfont icon-cancel"></span>
+    <div class="donate-img-box">
+        <img id="donate-qw-wechar" class="noLazyLoad donate-img" src="{{ url_for('static',filename=donate.wechat) }}" alt="no donate Image">
+        <img id="donate-qr-alipay" class="noLazyLoad donate-img" src="{{ url_for('static',filename=donate.alipay) }}" alt="no donate Image">
+    </div>
+    <span class="donate-word">
+        {{ donate.words }}
+    </span>
+    <div class="donate-list">
+        <span class="iconfont icon-donate-wechat"></span>
+        <span class="iconfont icon-donate-alipay"></span>
+    </div>
+</div>
+{% endblock donate %}

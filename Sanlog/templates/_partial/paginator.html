@@ -1,0 +1,9 @@
+{% block paginator %}
+<nav class="paginator"> {% if prev %}
+    <a class="prev" href="{{ prev }}">
+        <i class="iconfont icon-left"></i>上一页 </a> {% endif %} <span class="page-number"> Page
+                <strong>{{ page }}</strong> ,Posts <strong>{{ pages }}</strong>
+            </span> {% if next %}
+    <a class="next" href="{{ next }}">
+        <i class="iconfont icon-right"></i>下一页 </a> {% endif %} </nav>
+{% endblock paginator %}

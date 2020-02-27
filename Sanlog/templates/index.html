@@ -1,0 +1,58 @@
+{% extends 'base.html' %} {% block container_inner %}
+<div class="container-inner">
+    <div class="index slideDownMin">
+        <div class="profile">
+            <img class="avatar" src="{{ url_for('static',filename='head.jpg') }}" width=120 height=120>
+            <p class="author"><a href="#"> Sanwa</a></p>
+            <div class="social">
+                {% for social,url in socials.items() %} {% if url %}
+                <a target='_blank' class="links" href="{{ url }}"><i class="iconfont icon-{{ social }}"></i></a> {% endif %} {% endfor %}
+            </div>
+
+        </div>
+
+        <div class="article-list">
+            {% for article in articles %}
+            <article class="article">
+                <div class="article-header">
+                    <a class="title" href="blog/{{ article.id }}">
+                    {{ article.title }}
+                    </a>
+                    <div class="meta">
+                        <time>
+                            {{ article.Changetimestamp }}
+                        </time>
+                    </div>
+                </div>
+                {% if article.banner %}
+                <div class="banner" data-origin="" style="background-image:('blog/{{article.id}}/image/banner.jpg'">
+                </div>
+                {% endif %}
+
+                <div class="typo article-excerpt">
+                    <p>
+                        {{ article.typo | safe }}
+                    </p>
+                </div>
+                {% if article.category %}
+                <div class="article-categories">
+                    <i class="iconfont icon-category" style="margin-right:4px"></i> {% for cate in article.category %}
+                    <a class="link" href="category/{{ cate }}">{{ cate }}</a> {% endfor %}
+                </div>
+                {% endif %} {% if article.tag %}
+                <div class="article-tags">
+                    <i class="iconfont icon-tag" style="margin-right:4px"></i> {% for ta in article.tag %}
+                    <a class="link" href="tag/{{ ta }}">{{ ta }}</a> {% endfor %} </div> {% endif %}
+                <div class="article-bottom">
+                    <a class="readmore" href="{{ url_for('.blog',id=article.id)}}">More</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        {% include '_partial/paginator.html' %}
+        <script></script>
+    </div>
+</div>
+
+</div>
+{% endblock container_inner %}

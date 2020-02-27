@@ -1,0 +1,9 @@
+FLASK_APP=Sanlog
+#FLASK_RUN_HOST=
+#FLASK_RUN_PORT=
+
+FLASK_ENV=development
+#FLASK_ENV=production
+
+FLASK_DEBUG=1
+#FLASK_DEBUG=0

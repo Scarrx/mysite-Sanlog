@@ -1,0 +1,55 @@
+{
+    "menus": {
+        "home": "/",
+        "archives": "/archives",
+        "tags": "/tags",
+        "about": "/about",
+        "search": "/search"
+    },
+    "title": "Sanwa",
+    "owner": "Sanwa",
+    "logo": "head.png",
+    "favicon": "head.png",
+    "email": "Sanwaaa7@gmail.com",
+    "socials": {
+        "Github": "https://github.com/Scarrx",
+        "Weibo": "",
+        "Zhihu": "https://www.zhihu.com/people/zong-ran-24",
+        "Twitter": "",
+        "instagram": "",
+        "LinkedIn": "",
+        "Neteasemusic": "",
+        "Telegram": ""
+    },
+    "baidu_analytics": "",
+    "google_analytics": "",
+    "disqus": {
+        "comment": false,
+        "shortname": "Sanwa"
+    },
+    "leancloud": {
+        "comment": false,
+        "app_id": "",
+        "app_key": ""
+    },
+    "mob_share": {},
+    "share_item": [
+        "qq",
+        "weixin",
+        "weibo"
+    ],
+    "footer": {
+        "author": "Sanwa",
+        "since": 2020
+    },
+    "donate": {
+        "words": "Thank for donate",
+        "alipay": "alipay.jpg",
+        "wechat": "wechat.png"
+    },
+    "theme": {
+        "name": "nayo",
+        "css": "css/nayo.min.css",
+        "js": "javascript/nayo.bundle.js"
+    }
+}

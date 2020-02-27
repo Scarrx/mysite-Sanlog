@@ -1,0 +1,15 @@
+<div class="header">
+    <p class="title">
+        {% if post.title %} {{ post.title }} {% else %} Unknown {% endif %}
+    </p>
+
+    <div class="info">
+        <time>
+            {{ post.Changetimestamp }}
+        </time>
+        <i class="iconfont icon-words"></i>
+        <span class="words">
+            {{ post.words }}
+        </span>
+    </div>
+</div>

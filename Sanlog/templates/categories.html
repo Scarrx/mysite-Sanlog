@@ -1,0 +1,19 @@
+{% extends 'base.html' %} {% block container_inner %}
+<div class="container-inner slideDownMin">
+    <section class="fadeIn slideDownMin">
+        <div class="page-name">
+            <i class="iconfont icon-category"></i>
+            <span class="name">分类</span>
+        </div>
+        <div class="tag">
+            <ul class="category"> {% for post in posts %}
+                <li class="tag-item">
+                    <a class="category-wrap slideDownMin" href="{{url_for('.category',name=post.name) }}">
+                        <span class="iconfont icon-category"></span>
+                        <span class="category-name">{{ post.name }}</span>
+                        <span class="category-count">{{ post.c }}</span>
+                    </a>
+                </li> {% endfor %} </ul>
+        </div>
+    </section>
+</div> {% endblock container_inner %}

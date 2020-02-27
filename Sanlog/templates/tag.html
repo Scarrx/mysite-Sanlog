@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block container_inner %}
+<div class="container-inner slideDownMin">
+    <section>
+        <div class="page-name">
+            <i class="iconfont icon-page-tags"></i>
+            <span class="name">{{ title }}</span>
+        </div>
+        <div class="items">
+            {% for post in posts %}
+            <article class="item SlideDownMin">
+                <time class="time">{{ post.Changetimestamp.strftime("%Y-%m-%d") }}</time>
+                <a class="title" href="{{ url_for('.blog',id=post.id) }}">{{ post.title }}</a>
+            </article>
+
+            {% endfor %}
+        </div>
+    </section> {% include '_partial/paginator.html' %}
+</div> {% endblock container_inner %}

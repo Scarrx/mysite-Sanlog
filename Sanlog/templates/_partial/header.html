@@ -1,0 +1,30 @@
+{% block header %}
+<header class="header-wrapper">
+    <nav class="inner">
+        <div class="title">
+            <a href="/">
+                <img class="logo" src="{{ url_for('static', filename=logo ) }}">
+            </a>
+        </div>
+        <ul class="menu">
+            {% for menu,url in menus.items() -%} {% if menu=='search' -%}
+            <li class="item">
+                <a class="link" id="menu-search">
+                    <i class="iconfont icon-search"></i>
+                </a>
+            </li>
+            {% else -%}
+            <li class="item">
+                {% set menuname = "menu-"+menu -%}
+                <a class="link" id="{{ menuname }}" href="{{ url }}">{% set iconname="iconfont icon-"+menu -%}
+                <i class="{{ iconname }}"></i></a>
+            </li>
+            {% endif -%} {% endfor -%}
+
+        </ul>
+    </nav>
+</header>
+<header class="mobile-header-wrapper">
+    <i id="mobile-toggle" class="iconfont icon-menu mobile-toggle"></i>
+</header>
+{% endblock header %}

@@ -1,0 +1,14 @@
+{% block footer %}
+<footer class="footer">
+    <div class="inner">
+        <div class="copyright">
+            &copy; {% if since == year %} {{ since }} - {% endif %} {{ year }}
+            <!--  -->
+            {{ owner }}
+            <!-- {#  {{ website.author || theme.footer.author || theme.profile.author || config.author }} #} -->
+            <br/> By <a href="#" target=" _blank ">{{ owner }}</a>
+        </div>
+    </div>
+
+</footer>
+{% endblock footer%}

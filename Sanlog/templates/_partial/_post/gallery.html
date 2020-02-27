@@ -1,0 +1,4 @@
+{% block galary %} {% if gallery %}
+<div class="gallery">{% for image in gallery %} {% set style = "background-image: url("+url_for('static',filename=image.url)+")" %}
+    <div class="image" style="{{ style }}"></div>
+    {% endfor %} </div>{% endif %} {% endblock galary %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block container_inner %}
+<div class="container-inner">
+    <article class="post slideDownMin">
+        {% include '_partial/_post/header.html' %}
+        <div class="typo post-content">
+            {% include '_partial/_post/gallery.html' %} {{ mark | safe }}
+        </div>
+        {% include '_partial/_post/footer.html' %} {#
+        <!-- {% include '_partial/_post/donate.html' %} -->#} {# {% include '_partial/_post/comment.html' %} #}
+    </article>
+</div> {% endblock container_inner %}

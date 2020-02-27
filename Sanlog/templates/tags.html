@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {% block container_inner %}
+<div class="container-inner slideDownMin">
+    <section class="fadeIn slideDownMin">
+        <div class="page-name">
+            <i class="iconfont icon-page-tags"></i>
+            <span class="name">标签</span>
+        </div>
+        <div class="tag">
+            <ul class="tag">
+                {% for post in posts %}
+                <li class="tag-item">
+                    <a class="tag-wrap slideDownMin" href="{{ url_for('.tag',name=post.name) }}">
+                        <span class="iconfont icon-tag-inner"></span>
+                        <span class="tag-name">{{ post.name }}</span>
+                        <span class="tag-count">{{ post.c }}</span>
+                    </a>
+                </li>
+                {% endfor %} </ul>
+        </div>
+    </section>
+</div> {% endblock container_inner %}

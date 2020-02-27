@@ -1,0 +1,53 @@
+{% block article %}
+<article class="article">
+    <div class="article-header">
+        <a class="title" href="#"></a>
+        <div class="meta">
+            <time>
+                    <!--  -->
+                </time>
+        </div>
+    </div>
+
+    <!-- if post.banner -->
+    {% if post.banner %}
+    <div class="thumb">
+        <div class="banner" data-origin="#"></div>
+    </div>
+    {% endif %}
+
+    <div class="typo article-excerpt">
+        {% if post.excerpt %} {{ post.excerpt }} {% else %} {{ post.content }} {% endif %}
+    </div>
+
+    <div class="article-categories">
+        {% if post.categories and post.categories|length %}
+        <i class="iconfont icon-category" style="margin-right:4px"></i>
+        <!--  -->
+        {% for cate in post.categories %}
+        <a class="link" href={{ cate.url }}>{{ cate.name }}</a>
+        <!--  -->
+        {% endfor %}
+        <!--  -->
+        {% endif %}
+    </div>
+
+
+    <div class="article-tags">
+        {% if post.tags and post.tags|length %}
+        <i class="iconfont icon-tags" style="margin-right:4px"></i>
+        <!--  -->
+        {% for tag in post.tags %}
+        <a class="link" href={{ tag.url }}>{{ tag.name }}</a>
+        <!--  -->
+        {% endfor %}
+        <!--  -->
+        {% endif %}
+    </div>
+
+
+    <div class="article-bottom">
+        <a class="readmore" href="#">Readmore</a>
+    </div>
+</article>
+{% endblock article %}

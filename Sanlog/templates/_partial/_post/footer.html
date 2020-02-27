@@ -1,0 +1,41 @@
+<div class="bottom">
+    <div class="other">
+        <div class="meta">
+            <i class="iconfont icon-category"></i>
+            <a class="category-link"></a>
+            <i class="iconfont icon-tag"></i>
+            <a class="tag-link"></a>
+        </div>
+        <div class="operate">
+            <span class="text">SHARE</span> {% include '_partial/_post/mob_share.html' %} </div>
+    </div>
+    <nav class="nav">
+        {% if prev %}
+        <div class="link">
+            <a class="link-wrap" href="{{ url_for('.blog',id=prev.id) }}">
+                <strong class="caption">Older</strong>
+                <span class="title">{{ prev.title }}</span>
+            </a>
+        </div>
+        {% else %}
+        <div class="link">
+            <a class="link-wrap" href="#">
+                <strong class="caption"> Older </strong>
+                <span class="title"> None </span>
+            </a>
+        </div>
+        {% endif %} {% if next %}
+        <div class="link">
+            <a class="link-wrap" href="{{ url_for('.blog',id=next.id) }}">
+                <strong class="caption">Newer</strong>
+                <span class="title">{{ next.title }}</span>
+            </a>
+        </div> {% else %}
+        <div class="link">
+            <a class="link-wrap" href="#">
+                <strong class="caption"> Newer </strong>
+                <span class="title"> None </span>
+            </a>
+        </div> {% endif %}
+    </nav>
+</div>

@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block container_inner %}
+<div class="container-inner slideDownMin">
+    <section class="fadeIn slideDownMin">
+        <div class="page-name">
+            <i class="iconfont icon-page-archive"></i>
+            <span class="name">归档</span>
+        </div>
+        <div class="archive">
+            <ul class="archive-post">
+                {% for post in posts %} {% if post.new %}
+                <li class="archive-year">
+                    <span class="year">
+                    <span>{{ post.Changetimestamp.strftime("%Y") }}</span>
+                    </span>
+                </li>
+                {% endif %}
+                <li class="archive-item">
+                    <time class="time">{{ post.Changetimestamp.strftime("%m-%d") }}</time>
+                    <span class="title"><a href="{{ url_for('.blog',id=post.id) }}">{{ post.title }}</a> </span>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+    {% include '_partial/paginator.html' %}
+</div>
+
+{% endblock container_inner %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block container_inner %}
+<div class="H">
+    {% for dir in dirs %}
+    <a href="{{ dir.hh }}">{{ dir.i }}</a>
+    <br> {% endfor %} {% for image in images %}
+    <img src="{{ image }}">
+    <br> {% endfor %}
+    <br><br> {% if pre_page %}
+    <a href={{ page_page }}>nextpage:{{ pre_page }}</a> {% endif %}
+    <br> {% if next_page %}
+    <a href={{ next_page }}>nextpage:{{ next_page }}</a> {% endif %}
+</div>
+{% endblock container_inner %}

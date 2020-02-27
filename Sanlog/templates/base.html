@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+{% include '_partial/head.html' %}
+
+<body>
+    {% include '_partial/header.html' %} {% block container %}
+    <div class="container">
+        {%block container_inner %} {% endblock container_inner %}
+    </div>
+    {% endblock container %} {% include '_partial/search.html' %} {% include '_partial/slide-menu.html' %} {# % include '_partial/after-footer' % #} {% include '_partial/footer.html' %} {% include '_partial/script.html' %}
+</body>
+
+</html>

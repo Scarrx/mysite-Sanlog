@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    {% block head %}
+    <meta charset="utf-8" content="text/html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>
+        {% block title %}Template - Mysite{% endblock title%}
+    </title>
+    <link rel=" icon" href="{{ url_for('static',filename='Favicon.ico') }} "> {% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/nayo.min.css')}}">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script> -->
+
+    <!-- <link rel="stylesheet" href="/s/.min.css" style=""> -->
+    {% endblock styles%} {% endblock head%}
+</head>
+
+<body>
+    <header class="header-wrapper">
+        <nav class="inner">
+            <div class="title">
+                <a href="{{ url_for('.index') }}">
+                    <!-- Hello_World -->
+                    <img class="logo" src="{{ url_for('static',filename='Favicon.ico') }} ">
+                </a>
+            </div>
+
+            <ul class="menu">
+                <!-- 
+                {#
+                    {{ % for %}}
+
+                    {{ %endfor %}}
+                #}
+                 -->
+                <li class="item">
+                    <a class="link menu-active" id="" href="{{ url_for('blog.image') }}">Hello_World
+                        <i class="iconfont icon">
+                            <!-- ::before -->
+                        </i>
+                    </a>
+                </li>
+            </ul>
+            <HR>
+        </nav>
+    </header>
+
+    <header class="mobile-header-wraper">
+        <i id="mobile-toggle" class="iconfont icon-menu mobile-toggle"></i>
+    </header>
+
+    <div class="container">
+        {% block content_inner %}
+        <div class="container-inner">
+            <div class="index slideDownMin">
+
+            </div>
+
+
+        </div>
+        {% endblock content_inner %}
+    </div>
+
+    <i id="toTop" class="iconfont icon-backtotop rightOut"></i>
+    <div class="none" id="search">
+        <div class="header">
+            <input type="text" placeholder="输入你想搜索的" id="search-input" class="input">
+            <i id="search-cancel" class="iconfont icon-cancel"></i>
+        </div>
+        <div id="search-result" class="result"></div>
+    </div>
+    <div class="mobile-menu">
+        <!-- <img class="mobile-menu-icon" src="{{ url_for('static',filename='Favicon.ico') }} ">
+        
+            {#
+            {{ for}}
+            {{ endfor }}
+        #} -->
+        <a class="mobile-menu-link mobile-menu-search" href="#">MS</a>
+    </div>
+
+    <footer class="footer">
+        {% block footer %}
+        <div class="inner">
+            <div class="copyright">"helloSanwa@"<br>"By"<a href="#" target="_blank">ZXF</a>
+                <a href="{{ url_for('blog.index') }}">This is <u>Footer</u></a>
+            </div>
+        </div>
+        {% endblock footer%}
+    </footer>
+
+    {% block scripts %}
+    <script src="#"></script>
+    <script src="{{ url_for('static',filename='javascript/nayo.bundle.js')}}"></script>
+    <div class="mask none"></div>
+    {% endblock scripts%}
+</body>
+
+</html>

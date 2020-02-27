@@ -1,0 +1,110 @@
+{% extends 'base.html' %} {% block container_inner %}
+<div class="container-inner">
+    <article class="post slideDownMin">
+        <div class="header">
+            <p class="title">{{ post.title }}</p>
+        </div>
+        <div class="info">
+            <time class>{{ post.time }}</time>
+            <i class="iconfont icon-words"></i>
+            <span class="words">{{ post.words }}</span>
+        </div>
+        <script type="text/javascript"></script>
+        <div class="typo post-content"> {% include '_partial/_post/gallery.html' %} {{ mark | safe }} </div>
+        <div class="bottom">
+            <div class="other">
+                <div class="meta">
+                    <i class="iconfont icon-category"></i>
+                    <a class="category-link"></a>
+                    <i class="iconfont icon-tag"></i>
+                    <a class="tag-link"></a>
+                </div>
+                <div class="operate">
+                    <span class="text">SHARE</span>
+                    <ul class="share">
+                        <li class="iconfont 
+                        		icon-share-qq 
+                        		-mob-share-qq 
+                        		item -mob-share-initialized"></li>
+                        <li class="iconfont 
+                    		icon-share-weixin 
+                    		-mob-share-weixin 
+                    		item"></li>
+                        <li class="iconfont 
+                    		icon-share-weibo 
+                    		-mob-share-weibo 
+                    		item"></li>
+                    </ul>
+                    <script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=21d601593a1de"></script>
+                </div>
+            </div>
+            <nav class="nav">
+                <div class="link">
+                    <a class="link-wrap" href="#">
+                        <strong class="caption"> older </strong>
+                        <span class="title"> {{ prev.title }} </span>
+                    </a>
+                </div>
+                <div class="link">
+                    <a class="link-wrap" href="#">
+                        <strong class="caption"> newer </strong>
+                        <span class="title"> {{ next.title }} </span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+        <div class="comment">
+            <div class="comment">
+                <div class="comment" class="valine"> {% block edit %}
+                    <div class="vwrap">
+                        <div class="vheader item2"><input name="nick" placeholder="称呼" class="vnick vinput" type="text"><input name="mail" placeholder="邮箱" class="vmail vinput" type="email"></div>
+                        <div class="vedit"><textarea class="veditor vinput" placeholder=""></textarea></div>
+                        <div class="vcontrol">
+                            <div class="col col-60" title="MarkDown is Support"><svg aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                                    <path fill-rule="evenodd"
+                                        d="M14.85 3H1.15C.52 3 0 3.52 0 4.15v7.69C0 12.48.52 13 1.15 13h13.69c.64 0 1.15-.52 1.15-1.15v-7.7C16 3.52 15.48 3 14.85 3zM9 11H7V8L5.5 9.92 4 8v3H2V5h2l1.5 2L7 5h2v6zm2.99.5L9.5 8H11V5h2v3h1.5l-2.51 3.5z">
+                                    </path>
+                                </svg> MarkDown is Support</div>
+                            <div class="col col-40 text-right"><button type="button" class="vsubmit vbtn">回复</button>
+                            </div>
+                        </div>
+                        <div style="display:none;" class="vmark"></div>
+                    </div> {% endblock edit %}
+                    <div class="info">
+                        <div class="count col"> "("<span class="num">{{ comment.num }}</span>")" </div>
+                    </div> {% block jkl %}
+                    <div class="vloading" style="display:none;">
+                        <div class="spinner">
+                            <div class="r1"></div>
+                            <div class="r2"></div>
+                            <div class="r3"></div>
+                            <div class="r4"></div>
+                            <div class="r5"></div>
+                        </div>
+                    </div>
+                    <div class="vempty" style="display:none;"></div> {% endblock jkl %}
+                    <ul class="vlist">
+                        <li class="vcard" id="ss">
+                            <img class="vimg" src="#">
+                            <section>
+                                <div class="vhead">
+                                    <a rel="nofollow" href="mailto:{{ mail }}" target="_blank"> {{ nicheng }} </a>
+                                </div>
+                                <div class="vcontent">
+                                    <p>HHHHHHHHHHHHHHHHHHHHHHHHH</p>
+                                </div>
+                                <div class="vfooter">
+                                    <span class="vtime"> 2020-02-05 </span>
+                                    <span rid="" at="" mail="" class="vat"> huifu </span>
+                                </div>
+                            </section>
+                        </li>
+                    </ul>
+                    <div class="info">
+                        <div class="power txt-right">Powered By <a href="http://valine.js.org" target="_blank">Valine-v1.1.8-beta</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+</div> {% endblock container_inner %}

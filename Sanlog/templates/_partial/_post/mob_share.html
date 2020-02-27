@@ -1,0 +1,14 @@
+{% block share %}
+<ul class="share">
+
+    {% for i in share_item %}
+    <li class="iconfont 
+			icon-share-{{ i }}
+			-mob-share-{{ i}}
+			item"></li>
+
+    {% endfor %}
+</ul>
+
+<script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=21d601593a1de"></script>
+{% endblock share %}
